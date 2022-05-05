@@ -1,18 +1,32 @@
 package ru.job4j.oop;
 
 public class Cat {
-    /**
-     * Объявляем метод sound типа String
-     * внутри метода создаём переменную voice типа String
-     */
-    public String sound() {
-        String voice = "may-may";
-        return voice;
+
+    private String food;
+    private String nick;
+
+    public void show() {
+        System.out.println(this.nick + " and he eat " + this.food);
+    }
+
+    public void eat(String meat) {
+        this.food = meat;
+    }
+
+    public void giveNick(String nick) {
+        this.nick = nick;
     }
 
     public static void main(String[] args) {
-        Cat peppy = new Cat();
-        String say = peppy.sound();
-        System.out.println("Peppy says: " + say);
+        System.out.println("Nick cat ");
+        Cat gav = new Cat();
+        gav.giveNick("Gav");
+        gav.eat("kotleta");
+        gav.show();
+        System.out.println("Nick cat ");
+        Cat black = new Cat();
+        black.giveNick("Black");
+        black.eat("fish");
+        black.show();
     }
 }
