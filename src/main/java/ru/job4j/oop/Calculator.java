@@ -16,8 +16,8 @@ public class Calculator {
         return b / x;
     }
 
-    public int sumAllOperation(int result, int rsl, int resz, int rsldel) {
-        return result + rsl + resz + rsldel;
+    public int sumAllOperation(int result) {
+        return sum(result) + multiply(result) + minus(result) + divide(result);
     }
 
     public int multiply(int a) {
@@ -40,7 +40,7 @@ public class Calculator {
         System.out.println("Результат метода divide: " + rsldel);
 
         Calculator summa = new Calculator();
-        int rslsum = calculator.sumAllOperation(result, rsl, resz, rsldel);
+        int rslsum = calculator.sumAllOperation(result);
         System.out.println("Результат метода sumAllOperation: " + rslsum);
     }
 }
