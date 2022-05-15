@@ -1,8 +1,15 @@
 package ru.job4j.tracker;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
 public class Item {
     private int id;
     private String name;
+
+    private LocalDateTime created = LocalDateTime.now();
 
     public Item() {
     }
@@ -14,6 +21,10 @@ public class Item {
     public Item(int id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public LocalDateTime getCreated() {
+        return created;
     }
 
     public int getId() {
@@ -44,5 +55,10 @@ public class Item {
         tempTwo.printInfo();
         Item tempTree = new Item(13, "Stive");
         tempTree.printInfo();
+
+        LocalDateTime createdOne = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
+        String currentDateTimeFormat = createdOne.format(formatter);
+        System.out.println("Текущие дата и время после форматирования: " + currentDateTimeFormat);
     }
 }
