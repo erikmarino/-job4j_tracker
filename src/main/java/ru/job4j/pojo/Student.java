@@ -1,7 +1,7 @@
 package ru.job4j.pojo;
 
 import  java.util.Date;
-//ФИО, группа, дата поступления
+
 public class Student {
     private String nameSoname;
     private String group;
