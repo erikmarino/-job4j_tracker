@@ -2,7 +2,7 @@ package ru.job4j.encapsulation;
 
 public class Config {
     private String name;
-    private int position;
+    public int position;
     private String[] properties;
 
     public Config(String name) {
