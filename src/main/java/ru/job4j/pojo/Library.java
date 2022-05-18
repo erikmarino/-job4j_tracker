@@ -25,9 +25,9 @@ public class Library {
         }
         System.out.println("--- Book search: Clean code ---");
         for (int index = 0; index < books.length; index++) {
-             if (books[index] == code) {
-                 Book bk = books[index];
-                 System.out.println(bk.getTitle() + " - " + bk.getPages());
+            Book bk = books[index];
+            if (bk.getTitle().equals("Clean code")) {
+                 System.out.println(bk.getTitle());
              }
         }
     }
