@@ -7,16 +7,31 @@ public class Tracker {
     private int ids = 1;
     private int size = 0;
 
+    /**
+     *добавляет заявку, переданную в аргументах в массив заявок items.
+     * @return
+     */
     public Item add(Item item) {
         item.setId(ids++);
         items[size++] = item;
         return item;
     }
 
+    /**
+     * возвращает копию массива items без null элементов (без пустых ячеек)
+     * @return
+     */
     public Item[] findAll() {
         return Arrays.copyOf(items, size);
     }
 
+    /**
+     * проверяет в цикле все элементы массива items, сравнивая name (используя метод getName класса Item)
+     * с аргументом метода String key. Элементы, у которых совпадает name, копирует в результирующий массив
+     * и возвращает его.
+     * @param key
+     * @return
+     */
     public Item[] findByName(String key) {
         Item[] whenName = new Item[size];
         int count = 0;
@@ -28,14 +43,40 @@ public class Tracker {
         return Arrays.copyOf(whenName, count);
     }
 
+    /**
+     * проверяет в цикле все элементы массива items, сравнивая id с аргументом int id
+     * и возвращает найденный Item. Если Item не найден - возвращает null.
+     * @param id
+     * @return
+     */
     public Item findById(int id) {
-        Item rsl = null;
+        int index = indexOf(id);
+        return index != -1 ? items[index] : null;
+    }
+
+    /**
+     * метод, который будет возвращать index по id.
+     * @param id
+     * @return
+     */
+    private int indexOf(int id) {
+        int rsl = -1;
         for (int index = 0; index < size; index++) {
-            Item item = items[index];
-            if (item.getId() == id) {
-                rsl = item;
+            if (items[index].getId() == id) {
+                rsl = index;
                 break;
             }
+        }
+        return rsl;
+    }
+
+    public boolean replace(int id, Item item) {
+        int index = indexOf(id);
+        boolean rsl = false;
+        if (index != -1) {
+            items[index] = item;
+            item.setId(id);
+            rsl = true;
         }
         return rsl;
     }
