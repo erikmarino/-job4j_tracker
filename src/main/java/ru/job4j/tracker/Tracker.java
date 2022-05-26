@@ -8,7 +8,8 @@ public class Tracker {
     private int size = 0;
 
     /**
-     *добавляет заявку, переданную в аргументах в массив заявок items.
+     * добавляет заявку, переданную в аргументах в массив заявок items.
+     *
      * @return
      */
     public Item add(Item item) {
@@ -19,6 +20,7 @@ public class Tracker {
 
     /**
      * возвращает копию массива items без null элементов (без пустых ячеек)
+     *
      * @return
      */
     public Item[] findAll() {
@@ -29,6 +31,7 @@ public class Tracker {
      * проверяет в цикле все элементы массива items, сравнивая name (используя метод getName класса Item)
      * с аргументом метода String key. Элементы, у которых совпадает name, копирует в результирующий массив
      * и возвращает его.
+     *
      * @param key
      * @return
      */
@@ -46,6 +49,7 @@ public class Tracker {
     /**
      * проверяет в цикле все элементы массива items, сравнивая id с аргументом int id
      * и возвращает найденный Item. Если Item не найден - возвращает null.
+     *
      * @param id
      * @return
      */
@@ -56,6 +60,7 @@ public class Tracker {
 
     /**
      * метод, который будет возвращать index по id.
+     *
      * @param id
      * @return
      */
@@ -76,6 +81,18 @@ public class Tracker {
         if (index != -1) {
             items[index] = item;
             item.setId(id);
+            rsl = true;
+        }
+        return rsl;
+    }
+
+    public boolean delete(int id) {
+        int index = indexOf(id);
+        boolean rsl = false;
+        if (index != 1) {
+            System.arraycopy(items, index + 1, items, index, size - index - 1);
+            items[size - 1] = null;
+            size--;
             rsl = true;
         }
         return rsl;
