@@ -1,4 +1,4 @@
-package ru.job4j.inheritance.icecream;
+package ru.job4j.inheritance;
 
 public class IceCreamPlusJamPlusNuts extends IceCreamPlusJam {
     private static final  int NUTS_PRICE = 25;

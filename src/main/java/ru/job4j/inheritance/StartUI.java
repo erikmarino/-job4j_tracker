@@ -1,4 +1,4 @@
-package ru.job4j.inheritance.startui;
+package ru.job4j.inheritance;
 
 import ru.job4j.tracker.Item;
 

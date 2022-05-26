@@ -1,4 +1,4 @@
-package ru.job4j.inheritance.usagepackagedate;
+package ru.job4j.inheritance;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
