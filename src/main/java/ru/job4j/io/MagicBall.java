@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class MagicBall {
-    @SuppressWarnings("checkstyle:RightCurly")
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Я великий Оракул. Что ты хочешь узнать? ");
