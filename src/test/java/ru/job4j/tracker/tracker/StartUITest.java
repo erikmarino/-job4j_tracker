@@ -19,7 +19,7 @@ public class StartUITest {
 
     @Test
     public void whenEditItem() {
-        Tracker tracker =new Tracker();
+        Tracker tracker = new Tracker();
         Item item = new Item("new item");
         tracker.add(item);
         String[] answers = {
