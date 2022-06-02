@@ -1,4 +1,4 @@
-package ru.job4j.ex;
+/*package ru.job4j.ex;
 
 public class FindMaxLenght {
     public static void main(String[] args) {
@@ -12,4 +12,4 @@ public class FindMaxLenght {
         }
         System.out.println("Max length : " + max);
     }
-}
+}*/
