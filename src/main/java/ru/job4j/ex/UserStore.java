@@ -7,9 +7,10 @@ public class UserStore {
             if (login.equals(user.getUsername())) {
                 temp = user;
                 break;
-            } else {
-                throw new UserNotFoundException("User Not Found");
             }
+        }
+        if (temp == null) {
+            throw new UserNotFoundException("User Not Found");
         }
         return temp;
     }
@@ -21,7 +22,7 @@ public class UserStore {
         return true;
     }
 
-    public static void main(String[] args) throws UserNotFoundException {
+    public static void main(String[] args) {
         User[] users = {
                 new User("Petr Arsentev", true)
         };
@@ -30,12 +31,10 @@ public class UserStore {
             if (validate(user)) {
                 System.out.println("This user has an access");
             }
+        } catch (UserInvalidException uie) {
+            uie.printStackTrace();
         } catch (UserNotFoundException unfe) {
             unfe.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } catch (Throwable th) {
-            th.printStackTrace();
         }
     }
 }
