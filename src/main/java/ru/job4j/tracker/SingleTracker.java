@@ -28,19 +28,15 @@ public final class SingleTracker {
         return tracker.findByName(key);
     }
 
-    public int indexOf(int id) {
-        return 0;
-    }
-
     public Item[] findAll() {
-        return null;
+        return tracker.findAll();
     }
 
     public boolean replace(int id, Item item) {
-        return false;
+        return tracker.replace(id, item);
     }
 
     public boolean delete(int id) {
-        return false;
+        return tracker.delete(id);
     }
 }
